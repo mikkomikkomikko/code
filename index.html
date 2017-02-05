@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bresteri 2.0</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/css.css" rel="stylesheet">
+    <!-- Slider style -->
+    <link href="css/slider.css" rel="stylesheet">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-pure-slider/app/package/angular-pure-slider.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <!-- <nav>
+        <ul class="nav nav-pills pull-right">
+
+          <li role="presentation" class="active"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">About</a></li>
+          <li role="presentation"><a href="#">Contact</a></li>
+        </ul>
+      </nav> -->
+            <h3 class="text-muted"><img src="images/Chemex.svg" class="icon-header"> Brewsteri 2.0 </h3>
+        </div>
+
+        <div class="jumbotron">
+
+            <section class="slider-demo" ng-app="demo" ng-controller="demoCtrl">
+
+                <!--Water -->
+                <div class="row">
+                    <div class="col-xs-2 icon-align">
+                        <img src="images/Water.svg" class="icon">
+                    </div>
+                    <div class="col-xs-8 amount">
+                        <span class="big" type="text" ng-bind="water"></span><span class="unit"> g</span>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+
+                <!--Beans -->
+                <div class="row">
+                    <div class="col-xs-2 icon-align">
+                        <img src="images/Beans.svg" class="icon">
+                    </div>
+                    <div class="col-xs-8 amount">
+                        <span class="big" type="text" ng-bind="beans"></span><span class="unit"> g</span>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+
+                <!--Coffee -->
+                <div class="row">
+                    <div class="col-xs-2 icon-align">
+                        <img src="images/Chemex.svg" class="icon">
+                    </div>
+                    <div class="col-xs-8 amount">
+                        
+                        <span class="big" type="text" ng-bind="coffee"></span><span class="unit"> ml</span>
+                    </div>
+
+                    <div class="col-xs-2">
+                    </div>
+                </div>
+
+                <!--Cups -->
+                <div class="row">
+                    <div class="col-xs-2 icon-align">
+                        <img src="images/Coffee.svg" class="cup">
+                    </div>
+                    <div class="col-xs-8 amount">
+                        
+                        <span class="big" type="text" ng-bind="cups"></span><span class="unit"> cups</span>
+                    </div>
+                    <div class="col-xs-2">
+                    </div>
+                </div>
+
+                <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper">
+                </div>
+                <button class="btn btn-lg btn-success preset" ng-click="preset24()">24g</button>
+                <button class="btn btn-lg btn-success preset" ng-click="preset30()">30g</button>
+                <button class="btn btn-lg btn-success preset" ng-click="preset50()">50g</button>
+            </section>
+        </div>
+
+
+
+
+        <footer class="footer">
+            <p>&copy; 2016 mikkomikkomikko</p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <script>
+        var app = angular.module('demo', ['angular-pure-slider'])
+            .controller('demoCtrl', ['$scope',
+        function ($scope) {
+
+                    $scope.sliderInputValue = 1;
+                    $scope.maxValue = 70;
+                    $scope.minValue = 0;
+
+                    $scope.slider = 0;
+                    $scope.min = 0;
+                    $scope.max = 70;
+
+
+
+                    // Updates the sliderInputValue when slider used
+                    $scope.$watch('slider', function (newValue) {
+                        $scope.sliderInputValue = newValue;
+                        $scope.myMessage = 'The slider value is: ' + newValue;
+                        //$scope.magicNumber    = ( newValue / 16.6945 ) + 3.5;
+                        //$scope.magicNumber    = Math.round((newValue / 17.42) + 4);
+                        //$scope.magicNumber    = newValue;
+                        $scope.water = Math.floor(newValue * 13.6945);
+                        $scope.beans = Math.floor(newValue);
+                        $scope.coffee = Math.floor((newValue * 13.6945)*0.9);
+                        $scope.cups = Math.floor(newValue / 13.6945);
+                        //console.log(Math.floor(newValue / 13.6945))
+
+                    });
+
+                    $scope.$watch('min', function (newValue) {
+                        $scope.minValue = newValue;
+                    });
+
+                    $scope.$watch('max', function (newValue) {
+                        $scope.maxValue = newValue;
+                    });
+
+                    $scope.increaseSlider = function () {
+                        $scope.slider++;
+                    };
+
+                    $scope.decreaseSlider = function () {
+                        $scope.slider--;
+                    };
+
+                    // Presets
+                    $scope.preset24 = function () {
+                        $scope.magicNumber = 24;
+                        $scope.slider = 24;
+                    };
+
+                    $scope.preset30 = function () {
+                        $scope.magicNumber = 30;
+                        $scope.slider = 30;
+                    };
+
+                    $scope.preset50 = function () {
+                        $scope.magicNumber = 50;
+                        $scope.slider = 50;
+                    };
+        }
+      ]);
+    </script>
+
+</body>
+
+</html>
