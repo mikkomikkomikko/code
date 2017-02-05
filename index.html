@@ -10,6 +10,11 @@
     <meta name="author" content="">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" href="images/80%20-%20Spotlight.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/180%20-%20iPhone%206%20Plus.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/76%20-%20iPad%20(@1x).png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/152%20-%20iPad.png" />
+    <link rel="apple-touch-icon" sizes="58x58" href="images/58%20-%20Settings.png" />
 
     <title>Bresteri 2.0</title>
 
@@ -73,7 +78,7 @@
                         <img src="images/Chemex.svg" class="icon">
                     </div>
                     <div class="col-xs-8 amount">
-                        
+
                         <span class="big" type="text" ng-bind="coffee"></span><span class="unit"> ml</span>
                     </div>
 
@@ -87,7 +92,7 @@
                         <img src="images/Coffee.svg" class="cup">
                     </div>
                     <div class="col-xs-8 amount">
-                        
+
                         <span class="big" type="text" ng-bind="cups"></span><span class="unit"> cups</span>
                     </div>
                     <div class="col-xs-2">
@@ -134,7 +139,7 @@
                         //$scope.magicNumber    = newValue;
                         $scope.water = Math.floor(newValue * 13.6945);
                         $scope.beans = Math.floor(newValue);
-                        $scope.coffee = Math.floor((newValue * 13.6945)*0.9);
+                        $scope.coffee = Math.floor((newValue * 13.6945) * 0.9);
                         $scope.cups = Math.floor(newValue / 13.6945);
                         //console.log(Math.floor(newValue / 13.6945))
 
