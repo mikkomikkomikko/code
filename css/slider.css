@@ -1,33 +1,34 @@
  
         .slider {
-            background-color: #DFF0D8;
-            box-shadow: rgb(201, 216, 194) 0px 1px 0px 0px inset;
-            height: 12px;
+            background-color: #4E4747;
+            /*box-shadow: rgb(201, 216, 194) 0px 1px 0px 0px inset;*/
+            height: 1px;
             width: 100%;
         }
         
         .slider-selected {
-            background-color: #5CB85C;
-            box-shadow: rgb(97, 145, 97) 0px 1px 0px 0px inset;
+            background-color: #fff;
+            /*box-shadow: rgb(97, 145, 97) 0px 1px 0px 0px inset;*/
             float: left;
             height: 100%;
         }
         
         .slider-pointer {
             background: #fff;
-            background: linear-gradient(#fff, #f6f6f6) #fff;
+            /*background: linear-gradient(#fff, #f6f6f6) #fff;
             background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f6f6f6)) #fff;
-            background: -webkit-linear-gradient(#fff, #f6f6f6) #fff;
+            background: -webkit-linear-gradient(#fff, #f6f6f6) #fff;*/
             border-radius: 50%;
             webkit-border-radius: 50%;
-            box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
-            webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
+            /*box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);
+            webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 0.6), 0px 2px 8px rgba(25, 70, 94, 0.1);*/
             cursor: pointer;
             float: right;
-            height: 50px;
-            margin-right: -25px;
-            margin-top: -19px;
-            width: 50px;
+            height: 30px;
+            margin-right: -15px;
+            margin-top: -15px;
+            width: 30px;
+        
         }
         
         .slider-pointer:focus {
