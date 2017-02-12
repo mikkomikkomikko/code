@@ -45,10 +45,6 @@
             width: 25px;
         }
         
-        .slider-pointer:hover {
-            box-shadow: -2px 2px 4px rgba(25, 70, 94, 1), 0px 2px 8px rgba(25, 70, 94, 1);
-            webkit-box-shadow: -2px 2px 4px rgba(25, 70, 94, 1), 0px 2px 8px rgba(25, 70, 94, 1);
-        }
         
         .slider-wrapper {
             padding: 50px 0 50px;
