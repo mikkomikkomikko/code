@@ -90,7 +90,7 @@
 
                 <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper">
                 </div>
-                <button class="btn btn-lg btn-success preset" ng-click="preset24()">24g</button>
+                <button class="btn btn-lg btn-success preset" ng-click="preset18()">18g</button>
                 <button class="btn btn-lg btn-success preset" ng-click="preset30()">30g</button>
                 <button class="btn btn-lg btn-success preset" ng-click="preset50()">50g</button>
             </section>
@@ -120,14 +120,10 @@
                     $scope.$watch('slider', function (newValue) {
                         $scope.sliderInputValue = newValue;
                         $scope.myMessage = 'The slider value is: ' + newValue;
-                        //$scope.magicNumber    = ( newValue / 16.6945 ) + 3.5;
-                        //$scope.magicNumber    = Math.round((newValue / 17.42) + 4);
-                        //$scope.magicNumber    = newValue;
-                        $scope.water = Math.floor(newValue * 13.6945);
+                        $scope.water = Math.floor(newValue * 16.6945);
                         $scope.beans = Math.floor(newValue);
-                        $scope.coffee = Math.floor((newValue * 13.6945) * 0.9);
-                        $scope.cups = Math.floor(newValue / 13.6945);
-                        //console.log(Math.floor(newValue / 13.6945))
+                        $scope.coffee = Math.floor((newValue * 16.6945) * 0.9);
+                        $scope.cups = Math.floor(newValue / 16.6945);
 
                     });
 
@@ -149,8 +145,8 @@
 
                     // Presets
                     $scope.preset24 = function () {
-                        $scope.magicNumber = 24;
-                        $scope.slider = 24;
+                        $scope.magicNumber = 18;
+                        $scope.slider = 18;
                     };
 
                     $scope.preset30 = function () {
