@@ -41,58 +41,60 @@
 
                 <!--Water -->
                 <div class="row">
-                    <div class="col-xs-2 icon-align">
+                    <div class="col-xs-6 icondiv">
                         <img src="images/Water.svg" class="icon">
                     </div>
-                    <div class="col-xs-8 amount">
-                        <span class="big" type="text" ng-bind="water"></span><span class="unit"> g</span>
+                    <div class="col-xs-6 amount">
+                        <span class="big" type="text" ng-bind="water"></span>
+                        <span class="unit"> g</span>
                     </div>
-                    <div class="col-xs-2"></div>
                 </div>
 
                 <!--Beans -->
                 <div class="row">
-                    <div class="col-xs-2 icon-align">
+                    
+                        <div class="col-xs-6 icondiv">
                         <img src="images/Beans.svg" class="icon">
                     </div>
-                    <div class="col-xs-8 amount">
-                        <span class="big" type="text" ng-bind="beans"></span><span class="unit"> g</span>
+                            <div class="col-xs-6 amount">
+                        <span class="big" type="text" ng-bind="beans"></span>
+                        <span class="unit"> g</span>
                     </div>
-                    <div class="col-xs-2"></div>
                 </div>
 
                 <!--Coffee -->
                 <div class="row">
-                    <div class="col-xs-2 icon-align">
-                        <img src="images/Chemex.svg" class="icon">
+                    
+                        <div class="col-xs-6 icondiv">
+                            
+                            <img src="images/Chemex.svg" class="icon">
                     </div>
-                    <div class="col-xs-8 amount">
-
-                        <span class="big" type="text" ng-bind="coffee"></span><span class="unit"> ml</span>
-                    </div>
-
-                    <div class="col-xs-2">
-                    </div>
+                            <div class="col-xs-6 amount"><span class="big" type="text" ng-bind="coffee"></span>
+                            <span class="unit"> ml</span>
+                        </div>
+                    
                 </div>
 
                 <!--Cups -->
                 <div class="row">
-                    <div class="col-xs-2 icon-align">
-                        <img src="images/Coffee.svg" class="cup">
-                    </div>
-                    <div class="col-xs-8 amount">
 
-                        <span class="big" type="text" ng-bind="cups"></span><span class="unit"> cups</span>
+                    <div class="col-xs-6 icondiv">
+                        <img src="images/Coffee.svg" class="icon cup">
                     </div>
-                    <div class="col-xs-2">
+                        <div class="col-xs-6 amount">
+                        <span class="big" type="text" ng-bind="cups"></span>
+                        <span class="unit"> cups</span>
                     </div>
                 </div>
-
+                <!--Slider -->
                 <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper">
                 </div>
-                <button class="btn btn-lg btn-success preset" ng-click="preset18()">18g</button>
-                <button class="btn btn-lg btn-success preset" ng-click="preset30()">30g</button>
-                <button class="btn btn-lg btn-success preset" ng-click="preset50()">50g</button>
+                <!--Presets -->
+                <div class="presetdiv">
+                    <button class="presetbtn" ng-click="preset18()">18g</button>
+                    <button class="presetbtn" ng-click="preset30()">30g</button>
+                    <button class="presetbtn" ng-click="preset50()">50g</button>
+                </div>
             </section>
         </div>
 
