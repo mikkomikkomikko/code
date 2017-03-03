@@ -34,69 +34,84 @@
 <body>
 
     <div class="container">
+        <section class="slider-demo" ng-app="demo" ng-controller="demoCtrl">
+            <div class="jumbotron">
 
-        <div class="jumbotron">
-
-            <section class="slider-demo" ng-app="demo" ng-controller="demoCtrl">
-
-                <!--Water -->
-                <div class="row">
-                    <div class="col-xs-5 icondiv">
-                        <img src="images/Water.svg" class="icon">
-                    </div>
-                    <div class="col-xs-7 amount">
-                        <span class="big" type="text" ng-bind="water"></span>
-                        <span class="unit"> g</span>
-                    </div>
-                </div>
-
-                <!--Beans -->
-                <div class="row">
-                    
-                        <div class="col-xs-5 icondiv">
+                <!--beans & water row -->
+                <div class="row spacer">
+                <div class="col-xs-6 center">
+                    <div>
                         <img src="images/Beans.svg" class="icon">
                     </div>
-                            <div class="col-xs-7 amount">
+
+                    <div class="big">
                         <span class="big" type="text" ng-bind="beans"></span>
-                        <span class="unit"> g</span>
                     </div>
+
+                    <div class="unit">g</div>
+
                 </div>
 
-                <!--Coffee -->
-                <div class="row">
-                    
-                        <div class="col-xs-5 icondiv">
-                            
-                            <img src="images/Chemex.svg" class="icon">
+                <div class="col-xs-6 center">
+
+                    <div>
+                        <img src="images/Water.svg" class="icon">
                     </div>
-                            <div class="col-xs-7 amount"><span class="big" type="text" ng-bind="coffee"></span>
-                            <span class="unit"> ml</span>
-                        </div>
-                    
+
+                    <div class="big">
+                        <span class="big" type="text" ng-bind="water"></span>
+                    </div>
+
+                    <div class="unit">g</div>
+                </div>
+            </div>
+                <!-- End of Beans & water -->
+                <div class="row spacer">
+                <!-- Coffee & Cups -->
+                
+                <div class="col-xs-6 center">
+
+                    <div>
+                        <img src="images/Carafe.svg" class="icon">
+                    </div>
+
+                    <div class="big">
+                        <span class="big" type="text" ng-bind="coffee"></span>
+                    </div>
+
+                    <div class="unit">ml</div>
+
                 </div>
 
-                <!--Cups -->
-                <div class="row">
+                <div class="col-xs-6 center">
 
-                    <div class="col-xs-5 icondiv">
-                        <img src="images/Coffee.svg" class="icon cup">
+                    <div>
+                        <img src="images/Cup.svg" class="icon">
                     </div>
-                        <div class="col-xs-7 amount">
+
+                    <div class="big">
                         <span class="big" type="text" ng-bind="cups"></span>
-                        <span class="unit"> cups</span>
                     </div>
+
+                    <div class="unit">Cups</div>
+
+                </div>
+                <!-- End of Coffee & Cups -->
                 </div>
                 <!--Slider -->
-                <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper">
+
+                <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper block">
                 </div>
                 <!--Presets -->
-                <div class="presetdiv">
+                <!--<div class="presetdiv">
                     <button class="presetbtn" ng-click="preset18()">18g</button>
                     <button class="presetbtn" ng-click="preset30()">30g</button>
                     <button class="presetbtn" ng-click="preset50()">50g</button>
-                </div>
-            </section>
-        </div>
+                </div>-->
+
+            </div>
+        </section>
+
 
     </div>
     <!-- /container -->
