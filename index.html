@@ -93,7 +93,7 @@
                         <span class="big" type="text" ng-bind="cups"></span>
                     </div>
 
-                    <div class="unit">Cups</div>
+                    <div class="unit">Cups (1¼ dl)</div>
 
                 </div>
                 <!-- End of Coffee & Cups -->
@@ -136,8 +136,11 @@
                         $scope.myMessage = 'The slider value is: ' + newValue;
                         $scope.water = Math.floor(newValue * 16.6945);
                         $scope.beans = Math.floor(newValue);
-                        $scope.coffee = Math.floor((newValue * 16.6945) * 0.9);
-                        $scope.cups = Math.floor(newValue / 16.6945);
+                        //$scope.coffee = Math.floor((newValue * 16.6945) * 0.9);
+                        $scope.coffee = Math.floor((newValue * 16.6945) * 0.882353);
+                        var coffeeWeight = $scope.coffee; 
+                        $scope.cups = Math.floor(coffeeWeight / 125);
+                        //$scope.cups = Math.floor(newValue / 16.6945);
 
                     });
 
