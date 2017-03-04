@@ -1,74 +1,40 @@
+/* Space out content a bit */
 
 body {
+    padding-top: 40px;
+    padding-bottom: 0px;
     background-color: #221919;
-    height: 100%;
 }
 
 .block {
     padding-top: 40px;
     padding-bottom: 10px;
-   
-
 }
+
 .jumbotron {
     background: #221919;
     width: auto;
-    
 }
+
 .jumbotron.vertical-center {
-  margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
+    margin-bottom: 0;
+    /* Remove the default bottom margin of .jumbotron */
 }
 
 .vertical-center {
-width: auto;
-  min-height: 100%;  /* Fallback for vh unit */
-  min-height: 100vh; /* You might also want to use
-                        'height' property instead.
-                        
-                        Note that for percentage values of
-                        'height' or 'min-height' properties,
-                        the 'height' of the parent element
-                        should be specified explicitly.
-  
-                        In this case the parent of '.vertical-center'
-                        is the <body> element */
-
-  /* Make it a flex container */
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; 
-  
-  /* Align the bootstrap's container vertically */
-    -webkit-box-align : center;
-  -webkit-align-items : center;
-       -moz-box-align : center;
-       -ms-flex-align : center;
-          align-items : center;
-  
-  /* In legacy web browsers such as Firefox 9
-     we need to specify the width of the flex container */
-  width: 100%;
-  
-  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
-     hence the bootstrap's container won't be aligned to the center anymore.
-  
-     Therefore, we should use the following declarations to get it centered again */
-         -webkit-box-pack : center;
-            -moz-box-pack : center;
-            -ms-flex-pack : center;
-  -webkit-justify-content : center;
-          justify-content : center;
+    height: 100%;
+    height: 100vh;
 }
 
+.slider-demo {
+    height: 100%
+}
 
 .big {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 900;
     color: #FFF;
     padding: 10px;
-    
 }
 
 .unit {
@@ -77,26 +43,27 @@ width: auto;
     font-weight: 900;
     color: #555;
 }
+
 .spacer {
-    
     padding-top: 40px;
     padding-bottom: 40px;
-   
-    
 }
 
 .icon {
     margin-bottom: -10px;
     height: 30px;
     width: auto;
+    /*margin-top: 30px;
+    margin-right: 40px*/
 }
 
-
+.icondiv {
+    text-align: right;
+}
 
 .center {
     text-align: center;
 }
-
 
 .presetbtn {
     border-width: 1px;
@@ -118,21 +85,99 @@ width: auto;
     background-color: #fff;
 }
 
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
+/* Everything but the jumbotron gets side spacing for mobile first views */
 
-// Medium devices (tablets, 768px and up)
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/* Custom page header */
+
+.header {
+    padding-bottom: 20px;
+    /*border-bottom: 1px solid #e5e5e5;*/
+}
+
+
+/* Make the masthead heading the same height as the navigation */
+
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 20px;
+    font-size: 11px;
+}
+
+
+/* Custom page footer */
+
+.footer {
+    padding-top: 19px;
+    color: #777;
+    text-align: center;
+    /*border-top: 1px solid #e5e5e5;*/
+}
+
+
+/* Customize container */
+
 @media (min-width: 768px) {
-.container {
+    .container {
         max-width: 730px;
     }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
+.container-narrow > hr {
+    margin: 30px 0;
+}
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
+
+/* Main marketing message and sign up button */
+
+.jumbotron {
+    text-align: center;
+    /*border-bottom: 1px solid #e5e5e5;*/
+    background: none;
+}
+
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+
+/* Supporting marketing content */
+
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
