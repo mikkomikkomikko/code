@@ -16,10 +16,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="images/152%20-%20iPad.png" />
     <link rel="apple-touch-icon" sizes="58x58" href="images/58%20-%20Settings.png" />
 
-    <title>Bresteri 2.0</title>
+    <title>Bresteri</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/css.css" rel="stylesheet">
@@ -33,152 +33,154 @@
 
 <body>
 
-    <div class="container">
-        <section class="slider-demo" ng-app="demo" ng-controller="demoCtrl">
-            <div class="jumbotron">
+    <div class="jumbotron vertical-center">
+        <div class="container">
+            <section class="slider-demo" ng-app="demo" ng-controller="demoCtrl">
 
                 <!--beans & water row -->
                 <div class="row spacer">
-                <div class="col-xs-6 center">
-                    <div>
-                        <img src="images/Beans.svg" class="icon">
+                    <div class="div">
+                        
+                            <div class="col-xs-6 center">
+                                <div>
+                                    <img src="images/Beans.svg" class="icon">
+                                </div>
+
+                                <div class="big">
+                                    <span class="big" type="text" ng-bind="beans"></span>
+                                </div>
+
+                                <div class="unit">g</div>
+
+                            </div>
+                       
+
+                        
+                            <div class="col-xs-6 center">
+                                <div>
+                                    <img src="images/Water.svg" class="icon">
+                                </div>
+
+                                <div class="big">
+                                    <span class="big" type="text" ng-bind="water"></span>
+                                </div>
+
+                                <div class="unit">g</div>
+
+                            </div>
+                        
                     </div>
-
-                    <div class="big">
-                        <span class="big" type="text" ng-bind="beans"></span>
-                    </div>
-
-                    <div class="unit">g</div>
-
                 </div>
+                    <!-- End of Beans & water -->
+                    <!--                <div class="row spacer">-->
+                    <!-- Coffee & Cups -->
 
-                <div class="col-xs-6 center">
+                    <div class="col-xs-6 center">
 
-                    <div>
-                        <img src="images/Water.svg" class="icon">
+                        <div>
+                            <img src="images/Carafe.svg" class="icon">
+                        </div>
+
+                        <div class="big">
+                            <span class="big" type="text" ng-bind="coffee"></span>
+                        </div>
+
+                        <div class="unit">ml</div>
+
                     </div>
 
-                    <div class="big">
-                        <span class="big" type="text" ng-bind="water"></span>
+                    <div class="col-xs-6 center">
+
+                        <div>
+                            <img src="images/Cup.svg" class="icon">
+                        </div>
+
+                        <div class="big">
+                            <span class="big" type="text" ng-bind="cups"></span>
+                        </div>
+
+                        <div class="unit">Cups (1¼ dl)</div>
+
                     </div>
+                    <!-- End of Coffee & Cups -->
+                    <!--                </div>-->
+                    <!--Slider -->
 
-                    <div class="unit">g</div>
-                </div>
-            </div>
-                <!-- End of Beans & water -->
-                <div class="row spacer">
-                <!-- Coffee & Cups -->
-                
-                <div class="col-xs-6 center">
-
-                    <div>
-                        <img src="images/Carafe.svg" class="icon">
+                    <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper block">
                     </div>
-
-                    <div class="big">
-                        <span class="big" type="text" ng-bind="coffee"></span>
-                    </div>
-
-                    <div class="unit">ml</div>
-
-                </div>
-
-                <div class="col-xs-6 center">
-
-                    <div>
-                        <img src="images/Cup.svg" class="icon">
-                    </div>
-
-                    <div class="big">
-                        <span class="big" type="text" ng-bind="cups"></span>
-                    </div>
-
-                    <div class="unit">Cups (1¼ dl)</div>
-
-                </div>
-                <!-- End of Coffee & Cups -->
-                </div>
-                <!--Slider -->
-
-                <div wn-slider ng-model="slider" min="min" max="max" class="slider-wrapper block">
-                </div>
-                <!--Presets -->
-                <!--<div class="presetdiv">
+                    <!--Presets -->
+                    <!--<div class="presetdiv">
                     <button class="presetbtn" ng-click="preset18()">18g</button>
                     <button class="presetbtn" ng-click="preset30()">30g</button>
                     <button class="presetbtn" ng-click="preset50()">50g</button>
                 </div>-->
 
+            </section>
             </div>
-        </section>
-
-
-    </div>
-    <!-- /container -->
-    <script>
-        var app = angular.module('demo', ['angular-pure-slider'])
-            .controller('demoCtrl', ['$scope',
+        </div>
+</body>
+<script>
+    var app = angular.module('demo', ['angular-pure-slider'])
+        .controller('demoCtrl', ['$scope',
         function ($scope) {
 
-                    $scope.sliderInputValue = 1;
-                    $scope.maxValue = 100;
-                    $scope.minValue = 0;
+                $scope.sliderInputValue = 1;
+                $scope.maxValue = 100;
+                $scope.minValue = 0;
 
-                    $scope.slider = 0;
-                    $scope.min = 0;
-                    $scope.max = 100;
+                $scope.slider = 0;
+                $scope.min = 0;
+                $scope.max = 100;
 
 
 
-                    // Updates the sliderInputValue when slider used
-                    $scope.$watch('slider', function (newValue) {
-                        $scope.sliderInputValue = newValue;
-                        $scope.myMessage = 'The slider value is: ' + newValue;
-                        $scope.water = Math.floor(newValue * 16.6945);
-                        $scope.beans = Math.floor(newValue);
-                        //$scope.coffee = Math.floor((newValue * 16.6945) * 0.9);
-                        $scope.coffee = Math.floor((newValue * 16.6945) * 0.882353);
-                        var coffeeWeight = $scope.coffee; 
-                        $scope.cups = Math.floor(coffeeWeight / 125);
-                        //$scope.cups = Math.floor(newValue / 16.6945);
+                // Updates the sliderInputValue when slider used
+                $scope.$watch('slider', function (newValue) {
+                    $scope.sliderInputValue = newValue;
+                    $scope.myMessage = 'The slider value is: ' + newValue;
+                    $scope.water = Math.floor(newValue * 16.6945);
+                    $scope.beans = Math.floor(newValue);
+                    //$scope.coffee = Math.floor((newValue * 16.6945) * 0.9);
+                    $scope.coffee = Math.floor((newValue * 16.6945) * 0.882353);
+                    var coffeeWeight = $scope.coffee;
+                    $scope.cups = Math.floor(coffeeWeight / 125);
+                    //$scope.cups = Math.floor(newValue / 16.6945);
 
-                    });
+                });
 
-                    $scope.$watch('min', function (newValue) {
-                        $scope.minValue = newValue;
-                    });
+                $scope.$watch('min', function (newValue) {
+                    $scope.minValue = newValue;
+                });
 
-                    $scope.$watch('max', function (newValue) {
-                        $scope.maxValue = newValue;
-                    });
+                $scope.$watch('max', function (newValue) {
+                    $scope.maxValue = newValue;
+                });
 
-                    $scope.increaseSlider = function () {
-                        $scope.slider++;
-                    };
+                $scope.increaseSlider = function () {
+                    $scope.slider++;
+                };
 
-                    $scope.decreaseSlider = function () {
-                        $scope.slider--;
-                    };
+                $scope.decreaseSlider = function () {
+                    $scope.slider--;
+                };
 
-                    // Presets
-                    $scope.preset18 = function () {
-                        $scope.magicNumber = 18;
-                        $scope.slider = 18;
-                    };
+                // Presets
+                $scope.preset18 = function () {
+                    $scope.magicNumber = 18;
+                    $scope.slider = 18;
+                };
 
-                    $scope.preset30 = function () {
-                        $scope.magicNumber = 30;
-                        $scope.slider = 30;
-                    };
+                $scope.preset30 = function () {
+                    $scope.magicNumber = 30;
+                    $scope.slider = 30;
+                };
 
-                    $scope.preset50 = function () {
-                        $scope.magicNumber = 50;
-                        $scope.slider = 50;
-                    };
+                $scope.preset50 = function () {
+                    $scope.magicNumber = 50;
+                    $scope.slider = 50;
+                };
         }
       ]);
-    </script>
-
-</body>
+</script>
 
 </html>
