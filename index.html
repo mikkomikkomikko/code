@@ -91,9 +91,13 @@
 
                     <div class="col-xs-6 center">
 
+<<<<<<< HEAD
                         <div>
                             <img src="images/Cup.svg" class="icon">
                         </div>
+=======
+                    <div class="unit">Cups</div>
+>>>>>>> parent of 80ffef8... cup measurement fixed
 
                         <div class="big">
                             <span class="big" type="text" ng-bind="cups"></span>
@@ -124,6 +128,7 @@
         .controller('demoCtrl', ['$scope',
         function ($scope) {
 
+<<<<<<< HEAD
                 $scope.sliderInputValue = 1;
                 $scope.maxValue = 100;
                 $scope.minValue = 0;
@@ -179,6 +184,60 @@
                     $scope.magicNumber = 50;
                     $scope.slider = 50;
                 };
+=======
+                    $scope.sliderInputValue = 1;
+                    $scope.maxValue = 100;
+                    $scope.minValue = 0;
+
+                    $scope.slider = 0;
+                    $scope.min = 0;
+                    $scope.max = 100;
+
+
+
+                    // Updates the sliderInputValue when slider used
+                    $scope.$watch('slider', function (newValue) {
+                        $scope.sliderInputValue = newValue;
+                        $scope.myMessage = 'The slider value is: ' + newValue;
+                        $scope.water = Math.floor(newValue * 16.6945);
+                        $scope.beans = Math.floor(newValue);
+                        $scope.coffee = Math.floor((newValue * 16.6945) * 0.9);
+                        $scope.cups = Math.floor(newValue / 16.6945);
+
+                    });
+
+                    $scope.$watch('min', function (newValue) {
+                        $scope.minValue = newValue;
+                    });
+
+                    $scope.$watch('max', function (newValue) {
+                        $scope.maxValue = newValue;
+                    });
+
+                    $scope.increaseSlider = function () {
+                        $scope.slider++;
+                    };
+
+                    $scope.decreaseSlider = function () {
+                        $scope.slider--;
+                    };
+
+                    // Presets
+                    $scope.preset18 = function () {
+                        $scope.magicNumber = 18;
+                        $scope.slider = 18;
+                    };
+
+                    $scope.preset30 = function () {
+                        $scope.magicNumber = 30;
+                        $scope.slider = 30;
+                    };
+
+                    $scope.preset50 = function () {
+                        $scope.magicNumber = 50;
+                        $scope.slider = 50;
+                    };
+>>>>>>> parent of 80ffef8... cup measurement fixed
         }
       ]);
 </script>
