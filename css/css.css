@@ -10,14 +10,10 @@ body {
     background-color: #221919;
     position: fixed;
     overflow: hidden;
-<<<<<<< HEAD
     width: 100%;
     margin: auto;
-=======
-
->>>>>>> parent of 3a4ff6b... center align fixed
 }
-.mainwrapper {
+.container {
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
