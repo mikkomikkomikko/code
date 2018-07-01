@@ -10,9 +10,11 @@ body {
     background-color: #221919;
     position: fixed;
     overflow: hidden;
+    margin: auto;
+    width: 100%;
 
 }
-.mainwrapper {
+.container {
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
@@ -135,11 +137,14 @@ body {
 @media (min-width: 768px) {
     .container {
         max-width: 730px;
+        
+        
     }
 }
 
 .container-narrow > hr {
     margin: 30px 0;
+    
 }
 
 
@@ -147,6 +152,7 @@ body {
 
 .jumbotron {
     text-align: center;
+    
     /*border-bottom: 1px solid #e5e5e5;*/
     background: none;
 }
