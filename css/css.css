@@ -8,7 +8,19 @@ html {
 body {
     height: 100vh;
     background-color: #221919;
+<<<<<<< HEAD
     overflow: auto;
+=======
+    position: fixed;
+    overflow: hidden;
+
+}
+.mainwrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+>>>>>>> parent of 3a4ff6b... center align fixed
 }
 
 .block {
