@@ -8,19 +8,16 @@ html {
 body {
     height: 100vh;
     background-color: #221919;
-<<<<<<< HEAD
-    overflow: auto;
-=======
     position: fixed;
     overflow: hidden;
-
+    width: 100%;
+    margin: auto;
 }
-.mainwrapper {
+.container {
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
->>>>>>> parent of 3a4ff6b... center align fixed
 }
 
 .block {
@@ -175,11 +172,8 @@ body {
 /* Responsive: Portrait tablets and up */
 
 
-@media screen and (min-width: 375px) and (orientation:landscape) {
+@media screen and (min-width: 375px){
     /* Remove the padding we set earlier */
-    body {
-    -webkit-transform: rotate(90deg);
-  }
     .header,
     .marketing,
     .footer {
